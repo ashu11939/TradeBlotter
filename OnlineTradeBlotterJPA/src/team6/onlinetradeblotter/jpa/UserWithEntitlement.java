@@ -10,19 +10,20 @@ import java.util.Date;
  * 
  */
 @Entity
-@Table(name="users")
-@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
-public class User implements Serializable {
+@Table(name="users_with_entitlement")
+@NamedQuery(name="UserWithEntitlement.findAll", query="SELECT u FROM UserWithEntitlement u")
+public class UserWithEntitlement implements Serializable {
 	private static final long serialVersionUID = 1L;
-	public User(){
+	public UserWithEntitlement(){
 		
 	}
-	public User(String firstName, String lastName, String userName, String password, Date logoutTime){
+	public UserWithEntitlement(String firstName, String lastName, String userName, String password, Date logoutTime, int entitlement){
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = userName;
 		this.password = password;
 		this.logoutTime = logoutTime;
+		this.setEntitlement(entitlement);
 	}
 	
 	
@@ -41,6 +42,7 @@ public class User implements Serializable {
 
 	private String username;
 
+	private int entitlement;
 
 //	public int getUserID() {
 //		return this.userID;
@@ -88,6 +90,12 @@ public class User implements Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	public int getEntitlement() {
+		return entitlement;
+	}
+	public void setEntitlement(int entitlement) {
+		this.entitlement = entitlement;
 	}
 
 }
