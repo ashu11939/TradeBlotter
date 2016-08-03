@@ -19,6 +19,7 @@ private void Export(object sender, RoutedEventArgs e)
             file1.Close();
             */
 
+            if (String.Equals(fbd.SelectedPath, ""))
             {
                 // Prompt that there was no entry.
                 // Do nothing.

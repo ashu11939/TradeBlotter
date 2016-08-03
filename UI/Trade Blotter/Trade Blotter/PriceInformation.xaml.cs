@@ -18,6 +18,9 @@ using System.Web.Script.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization;
+using System.ComponentModel;
+
 
 
 namespace Trade_Blotter
@@ -119,5 +122,27 @@ namespace Trade_Blotter
             dataGrid.ItemsSource = ProductList;
            
         }
+
+        private void Export(object sender, RoutedEventArgs e)
+        {
+            
+            dataGrid.SelectAllCells();
+            dataGrid.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+            ApplicationCommands.Copy.Execute(null, dataGrid);
+            String resultat = (string)System.Windows.Clipboard.GetData(System.Windows.DataFormats.CommaSeparatedValue);
+            String result = (string)System.Windows.Clipboard.GetData(System.Windows.DataFormats.Text);
+            dataGrid.UnselectAllCells();
+            //System.Windows.MessageBox.Show("Enter Export path");
+            //System.IO.StreamWriter file1 = new System.IO.StreamWriter(@""+txtLocation.Text);
+
+
+            System.IO.StreamWriter file1 = new System.IO.StreamWriter(@"C:\Trade Blotter\Records.xls");
+            file1.WriteLine(result.Replace(',', ' '));
+            file1.Close();
+            
+            
+            System.Windows.MessageBox.Show(" Exporting DataGrid data to Excel file created.xls");
+        
+    }
     }
 }

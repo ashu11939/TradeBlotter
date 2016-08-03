@@ -1,0 +1,21 @@
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\bin\Debug\Trade Blotter.exe.config
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\bin\Debug\Trade Blotter.exe
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\bin\Debug\Trade Blotter.pdb
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\CreateAccount.g.cs
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\ForgotPasswordWindow.g.cs
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\MainWindow.g.cs
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\PriceInformation.g.cs
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\App.g.cs
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter_MarkupCompile.cache
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter_MarkupCompile.lref
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\CreateAccount.baml
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\ForgotPasswordWindow.baml
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\MainWindow.baml
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\PriceInformation.baml
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter.g.resources
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade_Blotter.Properties.Resources.resources
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter.csproj.GenerateResource.Cache
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter.exe
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter.pdb
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\NewMessageWindow.g.cs
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\NewMessageWindow.baml
