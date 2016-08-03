@@ -17,6 +17,5 @@ C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotte
 C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter.csproj.GenerateResource.Cache
 C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter.exe
 C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter.pdb
-C:\Users\Grad60\Documents\GitHub\TradeBlotter\UI\Trade Blotter\Trade Blotter\bin\Debug\Trade Blotter.exe.config
-C:\Users\Grad60\Documents\GitHub\TradeBlotter\UI\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter.exe
-C:\Users\Grad60\Documents\GitHub\TradeBlotter\UI\Trade Blotter\Trade Blotter\obj\Debug\Trade Blotter.pdb
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\NewMessageWindow.g.cs
+C:\Users\Grad60\Documents\Visual Studio 2015\Projects\Trade Blotter\Trade Blotter\obj\Debug\NewMessageWindow.baml
