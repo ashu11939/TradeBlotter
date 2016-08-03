@@ -14,8 +14,20 @@ import java.util.Date;
 @NamedQuery(name="User.findAll", query="SELECT u FROM User u")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	public User(){
+		
+	}
+	public User(String firstName, String lastName, String userName, String password, Date logoutTime){
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = userName;
+		this.password = password;
+		this.logoutTime = logoutTime;
+	}
+	
+	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userID;
 
 	private String firstName;
@@ -29,16 +41,14 @@ public class User implements Serializable {
 
 	private String username;
 
-	public User() {
-	}
 
-	public int getUserID() {
-		return this.userID;
-	}
+//	public int getUserID() {
+//		return this.userID;
+//	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
-	}
+//	public void setUserID(int userID) {
+//		this.userID = userID;
+//	}
 
 	public String getFirstName() {
 		return this.firstName;
