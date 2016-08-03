@@ -168,8 +168,12 @@ namespace TradeBlotter.Pages.Login
 
 
             string sortString = cmbSort.Text;
-            ComboBoxItem cbi = (ComboBoxItem)cmbSort.SelectedItem;
-            sortString = cbi.Content.ToString();
+
+            if (sortString == "") sortString = "price";
+            else {
+                    ComboBoxItem cbi = (ComboBoxItem)cmbSort.SelectedItem;
+                    sortString = cbi.Content.ToString();
+             }
 
             var content2 = client.DownloadString("http://192.168.110.1:8080/OnlineTradeBlotterWebProject/rest/app/getSortedPrices?sort=" + sortString + "&entitlement=" + MyConstants.entitlement + "&value=" + qty);
             Stream contentStream = GenerateStreamFromString(content2);
