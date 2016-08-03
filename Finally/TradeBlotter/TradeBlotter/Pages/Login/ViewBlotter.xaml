@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="TradeBlotter.Pages.Login.ViewBlotter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" Width="781" Height="599">
+    <Grid Style="{StaticResource ContentRoot}">
+
+        <Label x:Name="label"  Content="Trade Information" FontSize="15" HorizontalAlignment="Center" Margin="322,0,280,529" Width="147" />
+        <Button x:Name="btnrefresh" Content="Refresh" Height="25" Margin="566,64,91,466" Click="Refresh"/>
+        <Button x:Name="btnSearch" Content="Search" Height="25" Margin="1,56,667,474" Click="Search"/>
+        <TextBox x:Name="txtSearch" Margin="1,26,597,504" TextWrapping="Wrap" Height="25" Text="" TextChanged="txtSearch_TextChanged"/>
+        <Button x:Name="btnSort" Content="Sort" Margin="272,56,399,0" VerticalAlignment="Top" Click="Sort" Height="25"/>
+        <!--<Button x:Name="btnMessage" Content="Message" HorizontalAlignment="Left" Margin="137,441,0,0" VerticalAlignment="Top" Width="75" Click="Message"/>-->
+        <CheckBox x:Name="chkAutoRefresh" Content="Auto Refresh"  Margin="566,26,86,507" RenderTransformOrigin="0.5,0.5" />
+
+
+        <DataGrid x:Name="dataGrid"  Margin="1,114,0,180" IsReadOnly="True"  HorizontalAlignment="Stretch" Height="226" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Side" Binding="{Binding Path=side}"/>
+                <DataGridTextColumn Header="Time Updated" Binding="{Binding Path=timeUpdate}"/>
+                <DataGridTextColumn Header="Trade Status" Binding="{Binding Path=tradeStatus}"/>
+                <DataGridTextColumn Header="Product Name" Binding="{Binding Path=product}"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Path=qty}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Path=price}"/>
+                <DataGridTextColumn Header="Firm" Binding="{Binding Path=firm}"/>
+            </DataGrid.Columns>
+
+           <!-- <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                         <DataTrigger Binding="{Binding tradeStatus}" Value="InCompleted">
+                            <Setter Property="TextElement.Foreground" Value="Yellow">
+                            </Setter>
+                        </DataTrigger>
+                       <DataTrigger Binding="{Binding tradeStatus}" Value="Completed">
+                           
+                            <Setter Property="TextElement.Foreground" Value="Black"></Setter>
+                            
+                        </DataTrigger> 
+                    </Style.Triggers>
+
+                </Style>
+
+            </DataGrid.RowStyle> -->
+
+        </DataGrid>
+
+        <Label x:Name="label2" Content="Sort by:" HorizontalAlignment="Left" Margin="221,26,0,0" VerticalAlignment="Top" Width="46" Height="17"/>
+        <WrapPanel HorizontalAlignment="Left" Height="27" Margin="272,26,0,0" VerticalAlignment="Top" Width="174">
+            <ComboBox x:Name="cmbSort" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" SelectionChanged="Sort">
+                <ComboBoxItem Content="price"/>
+                <ComboBoxItem Content="timeUpdated"/>
+                <ComboBoxItem Content="product"/>
+                <ComboBoxItem Content="qty"/>
+            </ComboBox>
+            <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="71"/>
+        </WrapPanel>
+
+        <Button x:Name="btnGetNotes" Content="Get your notes"  Margin="502,520,125,10" Height="25" Width="auto" Click="GetNotes" RenderTransformOrigin="0.5,0.544">
+        </Button>
+        <TextBox x:Name="txtComments" HorizontalAlignment="Stretch" Height="97" Margin="0,404,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Type your text here(Max. 200 characters):" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.5,0.5">
+
+        </Label>
+        <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Margin="653,520,0,0" VerticalAlignment="Top" Width="68" Click="SaveNotes" Height="25" RenderTransformOrigin="0.5,0.5">
+
+        </Button>
+        <Button x:Name="button1" Content="Export" HorizontalAlignment="Left" Margin="7,520,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.253,0.615" Height="25" Click="Export"/>
+        <Button x:Name="ClearButton" Content="Clear Notes" HorizontalAlignment="Left" Height="25" Margin="364,520,0,0" VerticalAlignment="Top" Width="120" Click="clearNotes"/>
+
+    </Grid>
+</UserControl>

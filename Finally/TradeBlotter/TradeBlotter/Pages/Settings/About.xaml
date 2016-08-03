@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="TradeBlotter.Pages.Settings.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel MinWidth="200">
+                <TextBlock Text="ABOUT" Style="{StaticResource Heading2}" />
+                <TextBlock Text="Blotterpad is a perfect tool for a team of traders who want manage records of shares bought and sold by various team members. Traders can quickly search, filter transactions, export data to their local devices, chat with fellow traders. Quick notes can be written and saved in a scratch pad that can be later viewed whenever needed. Features: Shares the trades based accross Traders of similar entitlements. Traders can hold discussions in three pre-defined groups named Public, Restricted and Private. Traders are divided into three categories based on their entitlements: Level 1 A web trader with Level 2 entitlement can see all the transactions. A web trader with Level 2 entitlement has access to all three groups : Public , restricted and private. Level 2 A web trader with Level 2 entitlement can see transactions which are classiffied as Level 3 and Level 2. A web trader with Level 2 entitlement has access to groups : Public and restricted. Level 3 A web trader with Level 2 entitlement can see transactions which are classiffied only as Level 3. A web trader with Level 3 entitlement has access to group : Public only. Shows the records of equities of firms bought or sold. Features functionality for search based on the name of the firm. Sorting can be done based on share price, quantities, date of transaction. Scratchpad for jotting down notes. The notes can be saved so that it can be read again whenever needed. Data displayed in the blotter can be exported to .xls." Margin="0,0,0,8" TextWrapping="Wrap" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
