@@ -41,6 +41,10 @@ public class User implements Serializable {
 //		this.userID = userID;
 //	}
 
+	public boolean isPasswordCorrect(String key){
+		return key.equals(password);
+	}
+	
 	public String getFirstName() {
 		return this.firstName;
 	}

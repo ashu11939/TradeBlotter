@@ -9,8 +9,10 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import team6.onlinetradeblotter.ejb.TestSessionBean;
 import team6.onlinetradeblotter.ejb.TestSessionBeanLocal;
 import team6.onlinetradeblotter.jpa.User;
 
@@ -46,5 +48,14 @@ public class BlotterResource {
 		List<User> users = new ArrayList<User>();
 		users = testbean.getAllUsers();
 		return users;
+	}
+	
+	@GET
+	@Path("/{userName}/{key}")
+	@Produces("text/plain")
+	boolean testUserKeyCorrect(@PathParam("userName") String userName, @PathParam("key") String key){
+		testbean = new TestSessionBean();
+		return testbean.checkLogin(userName,key);
+
 	}
 }
