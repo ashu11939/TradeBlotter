@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `tradeblotter` /*!40100 DEFAULT CHARACTER SET utf
 USE `tradeblotter`;
 -- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: tradeblotter
+-- Host: localhost    Database: tradeblotter
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -98,6 +98,33 @@ LOCK TABLES `messages` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `pricing_info`
+--
+
+DROP TABLE IF EXISTS `pricing_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pricing_info` (
+  `SLNo` int(11) NOT NULL,
+  `CurrencyPair` varchar(45) DEFAULT NULL,
+  `Bid` decimal(10,0) DEFAULT NULL,
+  `Ask` decimal(10,0) DEFAULT NULL,
+  `TimeUpdated` datetime DEFAULT NULL,
+  `Qty(10000)` int(11) DEFAULT NULL,
+  PRIMARY KEY (`SLNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pricing_info`
+--
+
+LOCK TABLES `pricing_info` WRITE;
+/*!40000 ALTER TABLE `pricing_info` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pricing_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `scratchpad`
 --
 
@@ -158,4 +185,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-25 23:43:48
+-- Dump completed on 2016-08-26  9:45:49
