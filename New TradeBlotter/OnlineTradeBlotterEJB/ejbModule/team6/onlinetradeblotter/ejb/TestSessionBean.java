@@ -20,13 +20,6 @@ import javax.ejb.*;
 @Remote(TestSessionBeanRemote.class)
 public class TestSessionBean implements TestSessionBeanRemote, TestSessionBeanLocal {
 
-    /**
-     * Default constructor. 
-     */
-	
-	
-	
-	
     public TestSessionBean() {
         // TODO Auto-generated constructor stub
     }
@@ -43,4 +36,25 @@ public class TestSessionBean implements TestSessionBeanRemote, TestSessionBeanLo
     	return list;
     }
     
+    public boolean checkLogin(String userName , String password){
+    	// Check if username is correct.
+    	String queryString_checkUserID = String.format("Select username from User u where username = %s", userName);
+    	Query query = em.createQuery(queryString_checkUserID);
+    	List<String> resultList = query.getResultList();
+    	if (resultList.isEmpty()){
+    		return false;
+    	}
+    	else {
+        	String queryString_checkKey = String.format("Select password from User u where username = %s", userName);
+        	query = em.createQuery(queryString_checkUserID);
+        	resultList = query.getResultList();
+        	String actualPassword = resultList.get(0);
+        	
+    		return actualPassword.equals(password);
+    	}
+    	
+    	// check if password is correct.
+    }
+    
 }
+

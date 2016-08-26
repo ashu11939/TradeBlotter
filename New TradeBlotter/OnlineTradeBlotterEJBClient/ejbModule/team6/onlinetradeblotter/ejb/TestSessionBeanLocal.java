@@ -9,4 +9,5 @@ import team6.onlinetradeblotter.jpa.User;
 @Local
 public interface TestSessionBeanLocal {
 	public List<User> getAllUsers();
+	public boolean checkLogin(String userName , String password);
 }
