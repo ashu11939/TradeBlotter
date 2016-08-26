@@ -1,0 +1,8 @@
+@GET
+	@Path("/register")
+	@Produces("text/plain")
+	public void register(@QueryParam("firstName") String firstName, @QueryParam("lastName") String lastName, @QueryParam("username") String username, @QueryParam("password") String password){
+		//if(testbean.)
+		System.out.println(firstName+lastName); 
+		
+	}
