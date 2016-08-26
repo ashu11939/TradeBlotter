@@ -105,13 +105,16 @@ DROP TABLE IF EXISTS `pricing_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pricing_info` (
-  `SLNo` int(11) NOT NULL,
-  `CurrencyPair` varchar(45) DEFAULT NULL,
-  `Bid` decimal(10,0) DEFAULT NULL,
-  `Ask` decimal(10,0) DEFAULT NULL,
+  `TradeID` int(11) NOT NULL AUTO_INCREMENT,
+   `Side` char DEFAULT NULL,
   `TimeUpdated` datetime DEFAULT NULL,
-  `Qty(10000)` int(11) DEFAULT NULL,
-  PRIMARY KEY (`SLNo`)
+   `TradeStatus` varchar(15),
+  `Product` varchar(45) DEFAULT NULL,
+  `Qty` int(11) DEFAULT NULL,
+  `Price` decimal(8,2) DEFAULT NULL,
+  `Firm`  varchar(45) DEFAULT NULL,
+  
+  PRIMARY KEY (`TradeID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -132,7 +135,7 @@ DROP TABLE IF EXISTS `scratchpad`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `scratchpad` (
-  `Notes` varchar(45) DEFAULT NULL,
+  `Notes` varchar(100) DEFAULT NULL,
   `Username` varchar(45) DEFAULT NULL,
   KEY `UserName_idx` (`Username`),
   CONSTRAINT `UserName` FOREIGN KEY (`Username`) REFERENCES `users` (`Username`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -181,7 +184,7 @@ UNLOCK TABLES;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET Cuserspricing_infoHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
