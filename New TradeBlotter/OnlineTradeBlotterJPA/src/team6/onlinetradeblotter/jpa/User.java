@@ -4,19 +4,18 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 
-
 /**
  * The persistent class for the users database table.
  * 
  */
 @Entity
-@Table(name="users")
-@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
+@Table(name = "users")
+@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userID;
 
 	private String firstName;
@@ -33,18 +32,22 @@ public class User implements Serializable {
 	public User() {
 	}
 
-//	public int getUserID() {
-//		return this.userID;
-//	}
+	// public int getUserID() {
+	// return this.userID;
+	// }
 
-//	public void setUserID(int userID) {
-//		this.userID = userID;
-//	}
+	// public void setUserID(int userID) {
+	// this.userID = userID;
+	// }
 
-	public boolean isPasswordCorrect(String key){
-		return key.equals(password);
+	public User(String firstName2, String lastName2, String userName2, String password2) {
+		// TODO Auto-generated constructor stub
+		this.firstName = firstName2;
+		this.lastName = lastName2;
+		this.username = userName2;
+		this.password = password2;
 	}
-	
+
 	public String getFirstName() {
 		return this.firstName;
 	}
