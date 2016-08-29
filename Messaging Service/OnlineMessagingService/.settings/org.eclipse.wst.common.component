@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="OnlineMessagingService">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="OnlineMessagingServiceJPA.jar" deploy-path="/lib" handle="module:/resource/OnlineMessagingServiceJPA/OnlineMessagingServiceJPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="OnlineMessagingServiceEJB.jar" deploy-path="/" handle="module:/resource/OnlineMessagingServiceEJB/OnlineMessagingServiceEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="OnlineMessagingServiceEJBClient.jar" deploy-path="/" handle="module:/resource/OnlineMessagingServiceEJBClient/OnlineMessagingServiceEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="OnlineMessagingServiceWeb.war" deploy-path="/" handle="module:/resource/OnlineMessagingServiceWeb/OnlineMessagingServiceWeb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="OnlineMessagingServiceAppClient.jar" deploy-path="/" handle="module:/resource/OnlineMessagingServiceAppClient/OnlineMessagingServiceAppClient">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
