@@ -15,19 +15,15 @@ import javax.persistence.PersistenceContext;
 		@ActivationConfigProperty(propertyName = "messagingType", propertyValue = "javax.jms.MessageListener"),
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
 		@ActivationConfigProperty(propertyName = "destination", propertyValue = "java:/jboss/exported/jms/queue/TestQ1"),
-		@ActivationConfigProperty(propertyName = "ConnectionFactoryName", propertyValue = "java:/ConnectionFactory"),
-})
+		@ActivationConfigProperty(propertyName = "ConnectionFactoryName", propertyValue = "java:/ConnectionFactory"), })
 public class MessageReceiver implements MessageListener {
-	
+
 	public void onMessage(Message message) {
 		try {
 			if (message instanceof TextMessage) {
 				TextMessage m = (TextMessage) message;
-				//String stock = m.getText().split(":")[0];
-				//Double price = Double.parseDouble(m.getText().split(":")[1]);
-				System.out.println("Stock "+ m.getText());
+				System.out.println(m.getText());
 				MyConstants.ReceivedMessages = m.getText();
-				
 			}
 		} catch (JMSException e) {
 			// TODO Auto-generated catch block

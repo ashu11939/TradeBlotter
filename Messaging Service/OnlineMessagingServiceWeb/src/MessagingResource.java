@@ -1,11 +1,14 @@
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.jms.JMSException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.ws.rs.*;
+
+import model.DisplayMessages;
 import online.messaging.service.OnlineMessagingServiceBeanLocal;
 import online.messaging.service.OnlineMessagingServiceBeanReceiverLocal;
 
@@ -40,28 +43,26 @@ public class MessagingResource {
 	@GET
 	@Produces("text/plain")
 	@Path("/sendMessages")
-	public String sendMessages(@QueryParam("sender") String sender, @QueryParam("message") String message)
+	public String sendMessages(@QueryParam("sender") String sender, @QueryParam("message") String message, @QueryParam("group") String groupName)
 			throws NamingException, JMSException, IOException {
 
-		//sender = "jmsuser1";
-		//message = "Hello";
-		sessionBeanSender.doDemo(sender, message);
-		// String Sample = "test";
-		// sessionBeanSender.storeMessage(Sample, Sample, Sample, Sample,
-		// Sample);
-
+		sessionBeanSender.doDemo(sender, message, groupName);
+		
 		System.out.println("Received a GET request from app");
 		return "Hello from Backend!";
 	}
 
 	// Receive Messages API
 	@GET
-	@Produces("text/plain")
 	@Path("/receiveMessage")
-	public String receiveMessage(@QueryParam("receiver") String receiver) throws Exception {
-
-		String received = sessionBeanReceiver.doDemo(receiver);
-		//System.out.println(received);
+	@Produces("application/json")
+	public List<DisplayMessages> receiveMessage(@QueryParam("receiver") String groupName) throws Exception {
+		
+		
+		
+		List<DisplayMessages> received = sessionBeanReceiver.doDemo(groupName);
+		System.out.println(received);
+		
 		return received;
 	}
 

@@ -16,6 +16,8 @@ import javax.jms.TextMessage;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import model.DisplayMessages;
+
 /**
  * Session Bean implementation class OnlineMessagingServiceBean
  */
@@ -33,7 +35,14 @@ public class OnlineMessagingServiceBean implements OnlineMessagingServiceBeanRem
 	private QueueSender queueSender;
 
 	// Send Messages after receiving api request
-	public void doDemo(String Sender, String Message) throws NamingException, JMSException, IOException {
+	public void doDemo(String Sender, String Message, String groupName) throws NamingException, JMSException, IOException {
+		//String groupName = "Traders";
+		MyConstants.JMS_USER_QUEUE = "java:/jboss/exported/jms/queue/";
+		if(groupName.equals("Traders")) MyConstants.JMS_USER_QUEUE += "Traders"; 
+		else if(groupName.equals("Personal")) MyConstants.JMS_USER_QUEUE += "Personal";
+		else if(groupName.equals("Critical")) MyConstants.JMS_USER_QUEUE += "Critical";
+		else MyConstants.JMS_USER_QUEUE += "TestQ1";
+		
 		MyConstants.Sender = Sender;
 		Context ic = getContext();
 		init(ic);
@@ -73,21 +82,25 @@ public class OnlineMessagingServiceBean implements OnlineMessagingServiceBeanRem
 				MyConstants.JMS_PASSWORD);
 
 		queueSession = queueConnection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
-		myQueue = (Queue) ctx.lookup(MyConstants.JMS_QUEUE_JNDI);
+		myQueue = (Queue) ctx.lookup(MyConstants.JMS_USER_QUEUE);
 		queueSender = queueSession.createSender(myQueue);
 		queueConnection.start();
 	}
 
 	private void sendSomeMessages(String message) throws IOException, JMSException {
 
-		//Scanner sc = new Scanner(System.in);
+		DisplayMessages obj1 = new DisplayMessages();
+		obj1.sender = MyConstants.Sender;
+		obj1.message = message;
 		String text = "";
 		text += message;
 		TextMessage aMessage = queueSession.createTextMessage(text);
 		aMessage.setIntProperty("counter", 1);
 		queueSender.send(aMessage);
 		System.out.printf("JMS message sent: %s\n", text);
-
+		
+		MyConstants.msglist.add(obj1);
+		
 	}
 
 	private void close() throws JMSException {
@@ -105,5 +118,4 @@ public class OnlineMessagingServiceBean implements OnlineMessagingServiceBeanRem
 	}
 
 	// Peer to peer messaging service
-
 }
