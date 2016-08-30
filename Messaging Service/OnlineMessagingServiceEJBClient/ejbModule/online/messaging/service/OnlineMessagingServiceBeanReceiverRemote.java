@@ -5,5 +5,5 @@ import javax.ejb.Remote;
 @Remote
 public interface OnlineMessagingServiceBeanReceiverRemote {
 
-	public void doDemo(String receiver) throws Exception;
+	public String doDemo(String receiver) throws Exception;
 }
