@@ -1,9 +1,13 @@
 package online.messaging.service;
 
+import java.util.List;
+
 import javax.ejb.Remote;
+
+import model.DisplayMessages;
 
 @Remote
 public interface OnlineMessagingServiceBeanReceiverRemote {
 
-	public void doDemo(String receiver) throws Exception;
+	public List<DisplayMessages> doDemo(String receiver) throws Exception;
 }
